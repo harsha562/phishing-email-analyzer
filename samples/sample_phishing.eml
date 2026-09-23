@@ -1,0 +1,21 @@
+Delivered-To: victim@example.com
+Received: from mail.paypa1-secure.ru (mail.paypa1-secure.ru [203.0.113.45])
+From: "PayPal Security" <security@paypa1-secure.ru>
+Reply-To: fraud-support@totally-legit-mail.tk
+Return-Path: <bounce@paypa1-secure.ru>
+To: victim@example.com
+Subject: URGENT: Your account has been suspended - Verify Now
+Date: Mon, 22 Sep 2025 14:22:10 +0000
+Authentication-Results: mx.google.com; spf=fail smtp.mailfrom=paypa1-secure.ru; dkim=fail; dmarc=fail
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+<p>Dear Customer,</p>
+<p>We have detected unusual activity on your account. Your account will be closed
+within 24 hours unless you verify your identity immediately.</p>
+<p><a href="http://185.220.101.7/paypal-verify/login.php">Click here to verify your account</a></p>
+<p>This is a final notice. Act now to avoid permanent suspension.</p>
+<p>Thank you,<br>PayPal Security Team</p>
+</body>
+</html>

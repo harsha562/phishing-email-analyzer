@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel">
+  <form action="/analyze" method="post" enctype="multipart/form-data">
+    <label for="eml_file">Upload a .eml file</label>
+    <input type="file" id="eml_file" name="eml_file" accept=".eml,.txt,message/rfc822">
+
+    <div class="divider">— OR —</div>
+
+    <label for="raw_text">Paste raw email source</label>
+    <p class="hint">In Gmail: open the email → ⋮ menu → "Show original" → copy everything, paste below.</p>
+    <textarea id="raw_text" name="raw_text" placeholder="Delivered-To: you@example.com&#10;From: &quot;PayPal&quot; &lt;security@paypa1-verify.ru&gt;&#10;Subject: Your account has been suspended&#10;...paste full raw source here..."></textarea>
+
+    <button type="submit">Analyze Email</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel" style="text-align:center;">
+  <span class="verdict-badge {{ result.verdict_class }}-bg">{{ result.verdict }}</span>
+  <div class="score-line">Risk score: {{ result.score }} / 100+</div>
+</div>
+
+<div class="panel">
+  <div class="meta-row"><span>Subject</span><span>{{ result.subject }}</span></div>
+  <div class="meta-row"><span>From</span><span>{{ result.from }}</span></div>
+  <div class="meta-row"><span>To</span><span>{{ result.to }}</span></div>
+  <div class="meta-row"><span>Date</span><span>{{ result.date }}</span></div>
+</div>
+
+<div class="panel">
+  <div class="section-title">Findings ({{ result.all_findings|length }})</div>
+  {% if result.all_findings %}
+    {% for f in result.all_findings %}
+      <div class="finding {{ f.level }}">
+        <span class="finding-level">{{ f.level }}</span>{{ f.text }}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="hint">No red flags detected by this tool. Still verify manually — automated checks are not a guarantee.</p>
+  {% endif %}
+</div>
+
+{% if result.urls_found %}
+<div class="panel">
+  <div class="section-title">URLs found ({{ result.urls_found|length }})</div>
+  <ul class="url-list">
+    {% for u in result.urls_found %}
+      <li>{{ u }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<a class="back-link" href="/">&larr; Analyze another email</a>
+{% endblock %}
